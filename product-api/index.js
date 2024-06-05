@@ -6,8 +6,11 @@ const productRouterv1 = require("./productv1/routes");
 const cors = require("cors");
 
 const app = express();
-
-app.use(cors());
+const corsOptions = {
+  origin: 'http://localhost:5173', // Ganti dengan asal permintaan React.js Anda
+  optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
