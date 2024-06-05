@@ -18,7 +18,6 @@ export default function AddProduct() {
         price,
         stock,
         status,
-        image,
       });
       toast.success("Product added successfully");
       navigate("/");
