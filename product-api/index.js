@@ -7,7 +7,7 @@ const cors = require("cors");
 
 const app = express();
 const corsOptions = {
-  origin: "https://tugas-eduwork-mern.vercel.app", // Ganti dengan asal permintaan React.js Anda
+  origin: ["https://tugas-eduwork-mern.vercel.app", "http://localhost:5173"], // Ganti dengan asal permintaan React.js Anda
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
   optionsSuccessStatus: 200,
 };
