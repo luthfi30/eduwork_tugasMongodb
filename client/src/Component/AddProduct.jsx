@@ -20,7 +20,7 @@ export default function AddProduct() {
           price,
           stock,
           status,
-          image,
+          // image,
         },
         {
           headers: {
