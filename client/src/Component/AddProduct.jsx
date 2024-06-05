@@ -20,13 +20,13 @@ export default function AddProduct() {
           price,
           stock,
           status,
-          // image,
+          image,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
         }
-        // {
-        //   headers: {
-        //     "Content-Type": "application/json",
-        //   },
-        // }
       );
       toast.success("Product added successfully");
       navigate("/");
@@ -64,17 +64,11 @@ export default function AddProduct() {
                       <div className="form-group">
                         <label>Status</label>
                         <select className="form-control" value={status} onChange={(e) => setStatus(e.target.value)}>
-                          <option value="">-- status --</option>
+                          <option value=""></option>
                           <option value="True">True</option>
                           <option value="False">False</option>
                         </select>
                       </div>
-
-                      {/* <div className="form-group">
-                        <label>Image</label>
-                        <input type="file" className="form-control" value={image} onChange={(e) => setStock(e.target.value)} />
-                        <img src={file} />
-                      </div> */}
 
                       <button type="submit" className="btn btn-dark mt-5 mx-auto d-block">
                         Add Product

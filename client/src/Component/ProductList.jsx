@@ -62,10 +62,7 @@ const ProductList = () => {
                   <td>{product.price}</td>
                   <td>{product.status}</td>
                   <td>{product.stock}</td>
-                  <td>
-                    {product.image}
-                    <img src={`https://product-api-alpha.vercel.app/public/` + product.image} alt="" />
-                  </td>
+                  <td>{product.image}</td>
                   <td>
                     <Link to={`edit/${product._id}`} className="edit cursor-pointer">
                       <i className="material-icons" data-bs-toggle="tooltip" title="Edit">
