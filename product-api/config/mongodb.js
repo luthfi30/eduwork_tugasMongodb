@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const connectToDatabase = async () => {
   try {
-    await mongoose.connect("mongodb://127.0.0.1:27017/node_crud", {
+    await mongoose.connect("mongodb+srv://vercel-admin-user:pKJVo2CkQETfaYOG@mymongodb.ekopuki.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {
       // Kosongkan objek untuk menghindari peringatan
     });
     console.log("Connected to MongoDB");
