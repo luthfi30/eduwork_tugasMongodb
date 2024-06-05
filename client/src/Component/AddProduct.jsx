@@ -56,7 +56,7 @@ export default function AddProduct() {
                       <div className="form-group">
                         <label>Status</label>
                         <select className="form-control" value={status} onChange={(e) => setStatus(e.target.value)}>
-                          <option value=""></option>
+                          <option value="">-- select status --</option>
                           <option value="True">True</option>
                           <option value="False">False</option>
                         </select>
