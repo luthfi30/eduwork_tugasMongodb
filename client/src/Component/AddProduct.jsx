@@ -14,7 +14,7 @@ export default function AddProduct() {
     e.preventDefault();
     try {
       await axios.post(
-        "http://localhost:4000/api/v1/product",
+        "https://product-84ryfzk29-luthfis-projects-6cefe16f.vercel.app/api/v1/productcd ",
         {
           name,
           price,

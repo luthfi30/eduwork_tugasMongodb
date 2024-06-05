@@ -7,8 +7,8 @@ const cors = require("cors");
 
 const app = express();
 const corsOptions = {
-  origin: 'http://localhost:5173', // Ganti dengan asal permintaan React.js Anda
-  optionsSuccessStatus: 200
+  origin: "http://localhost:5173", // Ganti dengan asal permintaan React.js Anda
+  optionsSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
 app.use(logger("dev"));

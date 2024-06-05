@@ -17,7 +17,7 @@ export default function UpdateProduct() {
 
   const getProductById = async () => {
     try {
-      const response = await axios.get(`http://localhost:4000/api/v1/product/${id}`);
+      const response = await axios.get(`https://product-84ryfzk29-luthfis-projects-6cefe16f.vercel.app/api/v1/product/${id}`);
       setName(response.data.name);
       setPrice(response.data.price);
       setStock(response.data.stock);
@@ -32,7 +32,7 @@ export default function UpdateProduct() {
     e.preventDefault();
     try {
       await axios.patch(
-        `http://localhost:4000/api/v1/product/${id}`,
+        `https://product-84ryfzk29-luthfis-projects-6cefe16f.vercel.app/api/v1/product/${id}`,
         {
           name,
           price,
