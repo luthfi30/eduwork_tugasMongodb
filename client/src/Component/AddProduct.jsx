@@ -13,12 +13,20 @@ export default function AddProduct() {
   const saveProduct = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3000/api/v1/product", {
-        name,
-        price,
-        stock,
-        status,
-      });
+      await axios.post(
+        "http://localhost:4000/api/v1/product",
+        {
+          name,
+          price,
+          stock,
+          status,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       toast.success("Product added successfully");
       navigate("/");
     } catch (error) {

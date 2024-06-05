@@ -14,32 +14,42 @@ export default function UpdateProduct() {
   useEffect(() => {
     getProductById();
   }, []);
+
   const getProductById = async () => {
     try {
-      const response = await axios.get(`http://localhost:3000/api/v1/product/${id}`);
-
+      const response = await axios.get(`http://localhost:4000/api/v1/product/${id}`);
       setName(response.data.name);
       setPrice(response.data.price);
       setStock(response.data.stock);
       setStatus(response.data.status);
     } catch (error) {
       console.log(error);
+      toast.error("Failed to fetch product details");
     }
   };
 
-  const UpdateProduct = async (e) => {
+  const updateProduct = async (e) => {
     e.preventDefault();
     try {
-      await axios.patch(`http://localhost:3000/api/v1/product/${id}`, {
-        name,
-        price,
-        stock,
-        status,
-      });
-
+      await axios.patch(
+        `http://localhost:4000/api/v1/product/${id}`,
+        {
+          name,
+          price,
+          stock,
+          status,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      toast.success("Product updated successfully");
       navigate("/");
     } catch (error) {
       console.log(error);
+      toast.error("Failed to update product");
     }
   };
 
@@ -55,7 +65,7 @@ export default function UpdateProduct() {
                     <h3>Edit Product</h3>
                   </div>
                   <div className="card-body">
-                    <form onSubmit={UpdateProduct}>
+                    <form onSubmit={updateProduct}>
                       <div className="form-group">
                         <label>Name</label>
                         <input type="text" className="form-control" value={name} onChange={(e) => setName(e.target.value)} />

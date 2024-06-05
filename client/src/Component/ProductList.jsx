@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+
 const ProductList = () => {
   const [products, setProducts] = useState([]);
 
@@ -9,7 +10,7 @@ const ProductList = () => {
   }, []);
   const getProducts = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/v1/product");
+      const response = await axios.get("http://localhost:4000/api/v1/products");
       setProducts(response.data);
     } catch (error) {
       console.log(error);
@@ -18,7 +19,8 @@ const ProductList = () => {
 
   const deleteProduct = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/api/v1/product/${id}`);
+      await axios.delete(`http://localhost:4000/api/v1/product/${id}`);
+      onDelete(id);
       getProducts();
     } catch (error) {
       console.log(error);
@@ -67,12 +69,12 @@ const ProductList = () => {
                         &#xE254;
                       </i>
                     </Link>
-                    {console.log(product._id)}
-                    <a href="" onClick={() => deleteProduct(product._id)} className="delete cursor-pointer">
+
+                    <button onClick={() => deleteProduct(product._id)} className="delete cursor-pointer btn btn-sm">
                       <i className="material-icons" data-bs-toggle="tooltip" title="Edit">
                         &#xE872;
                       </i>
-                    </a>
+                    </button>
                   </td>
                 </tr>
               ))}
