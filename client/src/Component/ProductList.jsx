@@ -10,7 +10,7 @@ const ProductList = () => {
   }, []);
   const getProducts = async () => {
     try {
-      const response = await axios.get("https://product-84ryfzk29-luthfis-projects-6cefe16f.vercel.app/api/v1/products");
+      const response = await axios.get("https://product-api-alpha.vercel.app/api/v1/products");
       setProducts(response.data);
     } catch (error) {
       console.log(error);
@@ -19,7 +19,7 @@ const ProductList = () => {
 
   const deleteProduct = async (id) => {
     try {
-      await axios.delete(`https://product-84ryfzk29-luthfis-projects-6cefe16f.vercel.app/api/v1/product/${id}`);
+      await axios.delete(`https://product-api-alpha.vercel.app/api/v1/product/${id}`);
       onDelete(id);
       getProducts();
     } catch (error) {
