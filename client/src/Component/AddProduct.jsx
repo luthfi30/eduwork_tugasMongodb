@@ -21,12 +21,12 @@ export default function AddProduct() {
           stock,
           status,
           // image,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
         }
+        // {
+        //   headers: {
+        //     "Content-Type": "application/json",
+        //   },
+        // }
       );
       toast.success("Product added successfully");
       navigate("/");
