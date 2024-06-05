@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 const ProductList = () => {
   const [products, setProducts] = useState([]);
-
+  const navigate = useNavigate();
   useEffect(() => {
     getProducts();
   }, []);
