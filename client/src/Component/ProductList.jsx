@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 const ProductList = () => {
   const [products, setProducts] = useState([]);
 
@@ -21,7 +21,7 @@ const ProductList = () => {
     try {
       await axios.delete(`https://product-api-alpha.vercel.app/api/v1/product/${id}`);
       onDelete(id);
-      getProducts();
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
@@ -62,7 +62,9 @@ const ProductList = () => {
                   <td>{product.price}</td>
                   <td>{product.status}</td>
                   <td>{product.stock}</td>
-                  <td>{product.image}</td>
+                  <td>
+                    <img src={product.image} />
+                  </td>
                   <td>
                     <Link to={`edit/${product._id}`} className="edit cursor-pointer">
                       <i className="material-icons" data-bs-toggle="tooltip" title="Edit">
