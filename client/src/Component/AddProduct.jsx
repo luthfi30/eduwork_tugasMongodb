@@ -13,21 +13,13 @@ export default function AddProduct() {
   const saveProduct = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(
-        "https://product-api-alpha.vercel.app/api/v1/product ",
-        {
-          name,
-          price,
-          stock,
-          status,
-          // image,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      await axios.post("https://product-api-alpha.vercel.app/api/v1/product ", {
+        name,
+        price,
+        stock,
+        status,
+        image,
+      });
       toast.success("Product added successfully");
       navigate("/");
     } catch (error) {
