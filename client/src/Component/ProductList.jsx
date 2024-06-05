@@ -20,7 +20,7 @@ const ProductList = () => {
   const deleteProduct = async (id) => {
     try {
       await axios.delete(`https://product-api-alpha.vercel.app/api/v1/product/${id}`);
-      onDelete(id);
+
       navigate("/");
     } catch (error) {
       console.log(error);
